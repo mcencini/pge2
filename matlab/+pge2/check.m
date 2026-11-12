@@ -30,7 +30,7 @@ params.gmax = 0;       % max single-axis gradient amplitude [G/cm]
 params.smax = 0;       % max single-axis slew rate in sequence, G/cm/ms
 params.PNSwt = arg.PNSwt;
 try
-    params.hash = DataHash(psq);
+    params.hash = pge2.utils.hashstruct(psq);
 catch ME
     error(sprintf('%s\nAdd DataHash to path, e.g.:\n >> addpath(''genpath(pulseg/matlab/third_party''))\n', ME.message));
 end

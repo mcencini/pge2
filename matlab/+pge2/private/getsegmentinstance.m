@@ -88,7 +88,7 @@ for j = 1:length(blockIDs)
 
     n = round(b.blockDuration/sysGE.GRAD_UPDATE_TIME);
     if abs(n - b.blockDuration/sysGE.GRAD_UPDATE_TIME) > 1e-7
-        throw(MException('block:duration', sprintf('%s: Parent block duration not on sysGE.GRAD_UPDATE_TIME boundary', msg1))); 
+        error('block:duration', '%s', sprintf('%s: Parent block duration not on sysGE.GRAD_UPDATE_TIME boundary', msg1)); 
     end
 
     % RF

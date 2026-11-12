@@ -31,10 +31,10 @@ arg = vararg_pair(arg, varargin);
 if ~isempty(arg.params)
     params = arg.params;
     if arg.checkHash
-        assert(strcmp(params.hash, DataHash(psq)), ...
+        assert(strcmp(params.hash, pge2.utils.hashstruct(psq)), ...
             'hash mismatch: Run ''params = pge2.check(psq, sysGE);'' again before calling this function');
 %    else
-%        if ~strcmp(params.hash, DataHash(psq))
+%        if ~strcmp(params.hash, pge2.utils.hashstruct(psq))
 %            warning('Hash mismatch between params and psq objects. This is ok if due to an applied FOV offset or similar benign modification.');
 %        end
     end
