@@ -240,7 +240,7 @@ while n < psq.nMax % & cnt < 2
                     error('Number of non-zero RF waveform samples in seq and psq objects do not match');
                 end
                 assert(norm(tmp_tt_seq(:) - tmp_tt_psq(:)) < 1e-7, 'RF timing in seq and psq objects do not match');
-                err = 100 * rmse(abs(tmp_rf_psq(:)), abs(tmp_rf_seq(:))) / rmse(tmp_rf_psq(:), 0*tmp_rf_seq(:));
+                err = 100 * norm(abs(tmp_rf_psq(:)) - abs(tmp_rf_seq(:))) / norm(tmp_rf_psq(:));
             end
         end
     end
